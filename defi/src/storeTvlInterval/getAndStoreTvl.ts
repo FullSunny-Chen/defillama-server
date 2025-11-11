@@ -159,7 +159,7 @@ function mergeBalances(key: string, storedKeys: string[], balancesObject: tvlsOb
   }
 }
 
-function prefixMalformed(address: string) {
+export function prefixMalformed(address: string) {
   const parts = address.split(':')
   if (parts.length < 3) return false
   if (address.indexOf(':coingecko:') != -1) return true
@@ -177,7 +177,7 @@ type StoreTvlOptions = {
   isRunFromUITool?: boolean
 }
 
-const deadChains = new Set(['heco', 'astrzk', 'real', 'milkomeda', 'milkomeda_a1'])
+export const deadChains = new Set(['heco', 'astrzk', 'real', 'milkomeda', 'milkomeda_a1', 'eos_evm', 'eon'])
 
 export type storeTvl2Options = StoreTvlOptions & {
   unixTimestamp: number,
